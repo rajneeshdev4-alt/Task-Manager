@@ -30,9 +30,9 @@ export function TaskFilters() {
     query.sortOrder !== 'desc';
 
   return (
-    <div className="rounded-2xl border border-slate-200 bg-white p-3 shadow-sm">
-      <div className="flex flex-col gap-3 lg:flex-row lg:items-end">
-        <label className="relative block min-w-0 flex-1" htmlFor="search">
+    <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-6 xl:items-end">
+        <label className="relative block min-w-0 sm:col-span-2" htmlFor="search">
           <span className="mb-1.5 block text-sm font-medium text-slate-700">Search</span>
           <Search size={16} className="pointer-events-none absolute bottom-3 left-3 text-slate-400" />
           <input
@@ -43,7 +43,7 @@ export function TaskFilters() {
             className="h-10 w-full rounded-xl border border-slate-200 bg-white pl-9 pr-3 text-sm outline-none focus:border-slate-400 focus:ring-4 focus:ring-slate-900/10"
           />
         </label>
-        <div className="grid flex-1 grid-cols-2 gap-3 sm:grid-cols-4 lg:max-w-3xl">
+        <div className="contents">
           <SelectField
             id="status-filter"
             label="Status"

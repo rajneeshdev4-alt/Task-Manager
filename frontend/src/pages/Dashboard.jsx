@@ -133,9 +133,10 @@ export function Dashboard() {
 
       {statsError ? <ErrorState message={statsError} onRetry={reloadStats} /> : <StatsGrid stats={stats} loading={statsLoading} />}
 
-      <div className="mt-6 grid gap-4 xl:grid-cols-[minmax(0,1fr)_320px]">
-        <div className="space-y-4">
-          <TaskFilters />
+      <div className="mt-6 space-y-4">
+        <TaskFilters />
+        <div className="grid items-start gap-4 min-[1440px]:grid-cols-[minmax(0,1fr)_280px]">
+          <div className="min-w-0 space-y-4">
           {error ? (
             <ErrorState message={error} onRetry={reloadTasks} />
           ) : !loading && tasks.length === 0 ? (
@@ -174,8 +175,9 @@ export function Dashboard() {
               <Pagination pagination={pagination} onPageChange={(page) => updateQuery({ page }, { resetPage: false })} />
             </section>
           )}
+          </div>
+          <RecentTasks tasks={stats?.recent || []} onSelect={openDetail} />
         </div>
-        <RecentTasks tasks={stats?.recent || []} onSelect={openDetail} />
       </div>
 
       <div className="mt-4">

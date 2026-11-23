@@ -17,7 +17,7 @@ export function Badge({ kind, value }) {
   const options = kind === 'status' ? STATUS_OPTIONS : PRIORITY_OPTIONS;
 
   return (
-    <span className={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium ${styles[value] || statusStyles.pending}`}>
+    <span className={`inline-flex whitespace-nowrap items-center rounded-full px-2.5 py-1 text-xs font-medium ${styles[value] || statusStyles.pending}`}>
       {labelFor(options, value)}
     </span>
   );

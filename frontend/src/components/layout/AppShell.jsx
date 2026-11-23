@@ -5,7 +5,7 @@ export function AppShell({ children }) {
   return (
     <div className="min-h-screen">
       <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/95 backdrop-blur">
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
+        <div className="mx-auto flex h-16 max-w-[90rem] items-center justify-between px-4 sm:px-6">
           <div className="flex items-center gap-2.5">
             <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-900 text-white">
               <CheckSquare size={18} />
@@ -26,7 +26,7 @@ export function AppShell({ children }) {
           </div>
         </div>
       </header>
-      <main className="mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-8">{children}</main>
+      <main className="mx-auto max-w-[90rem] px-4 py-6 sm:px-6 sm:py-8">{children}</main>
     </div>
   );
 }
