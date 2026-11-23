@@ -15,12 +15,16 @@ function createApp() {
   app.disable('x-powered-by');
   app.use(helmet());
   app.use(
-    cors({
-      origin: frontendUrl,
-      methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
-      allowedHeaders: ['Content-Type'],
-    })
-  );
+  cors({
+    // This function allows any origin, bypassing the wildcard restriction
+    origin: function (origin, callback) {
+      callback(null, true); 
+    },
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization", "x-csrf-token", "Origin", "Accept"],
+  })
+);
 
   if (process.env.NODE_ENV !== 'test') {
     app.use(
